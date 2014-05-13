@@ -16,3 +16,8 @@ standard input.
 
 ADDRESS is a hexadecimal address
 (without '0x') which marks the start of the sensitive area.
+
+For example, add this to the Post-build steps in Code::Blocks to prevent axsdb from
+overwriting the factory calibration data.
+
+	$(PROJECT_DIR)checksize --file $(PROJECT_DIR)$(TARGET_OUTPUT_FILE) --protect FC00
